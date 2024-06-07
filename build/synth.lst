@@ -1,0 +1,971 @@
+ARM GAS  C:\Users\deved\AppData\Local\Temp\ccBD00lM.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 28, 1
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 2
+  10              		.eabi_attribute 34, 1
+  11              		.eabi_attribute 18, 4
+  12              		.file	"synth.cpp"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.section	.text._ZN5Synth4InitEv,"ax",%progbits
+  17              		.align	1
+  18              		.p2align 2,,3
+  19              		.global	_ZN5Synth4InitEv
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv5-d16
+  26              	_ZN5Synth4InitEv:
+  27              	.LVL0:
+  28              	.LFB4861:
+  29              		.file 1 "synth.cpp"
+   1:synth.cpp     **** #include "daisy_seed.h"
+   2:synth.cpp     **** #include "daisysp.h"
+   3:synth.cpp     **** 
+   4:synth.cpp     **** #include "synth.h"
+   5:synth.cpp     **** #include "voice.h"
+   6:synth.cpp     **** 
+   7:synth.cpp     **** using namespace daisy;
+   8:synth.cpp     **** using namespace daisysp;
+   9:synth.cpp     **** 
+  10:synth.cpp     **** void Synth::Init()
+  11:synth.cpp     **** {
+  30              		.loc 1 11 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 8
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  12:synth.cpp     ****     for(int i = 0; i < 7; i++)
+  34              		.loc 1 12 5 view .LVU1
+  35              	.LBB2:
+  36              		.loc 1 12 22 view .LVU2
+  37              	.LBE2:
+  11:synth.cpp     ****     for(int i = 0; i < 7; i++)
+  38              		.loc 1 11 1 is_stmt 0 view .LVU3
+  39 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+  40              		.cfi_def_cfa_offset 36
+  41              		.cfi_offset 4, -36
+  42              		.cfi_offset 5, -32
+  43              		.cfi_offset 6, -28
+  44              		.cfi_offset 7, -24
+  45              		.cfi_offset 8, -20
+ARM GAS  C:\Users\deved\AppData\Local\Temp\ccBD00lM.s 			page 2
+
+
+  46              		.cfi_offset 9, -16
+  47              		.cfi_offset 10, -12
+  48              		.cfi_offset 11, -8
+  49              		.cfi_offset 14, -4
+  50 0004 41F24811 		movw	r1, #4424
+  51 0008 41F29412 		movw	r2, #4500
+  52 000c 41F2881A 		movw	r10, #4488
+  53 0010 41F2A419 		movw	r9, #4516
+  54 0014 41F2B018 		movw	r8, #4528
+  55 0018 41F2C817 		movw	r7, #4552
+  56 001c 41F2BC16 		movw	r6, #4540
+  57 0020 41F27815 		movw	r5, #4472
+  58 0024 83B0     		sub	sp, sp, #12
+  59              		.cfi_def_cfa_offset 48
+  11:synth.cpp     ****     for(int i = 0; i < 7; i++)
+  60              		.loc 1 11 1 view .LVU4
+  61 0026 0446     		mov	r4, r0
+  62 0028 0144     		add	r1, r1, r0
+  63 002a 0244     		add	r2, r2, r0
+  64 002c 8244     		add	r10, r10, r0
+  65 002e 8144     		add	r9, r9, r0
+  66 0030 8044     		add	r8, r8, r0
+  67 0032 0744     		add	r7, r7, r0
+  68 0034 0644     		add	r6, r6, r0
+  69 0036 0544     		add	r5, r5, r0
+  70 0038 00F5805B 		add	fp, r0, #4096
+  71              	.LVL1:
+  72              	.L3:
+  73              	.LBB9:
+  74              	.LBB3:
+  13:synth.cpp     ****     {
+  14:synth.cpp     ****         voice[i].sample_rate = sample_rate;
+  75              		.loc 1 14 9 is_stmt 1 view .LVU5
+  76              		.loc 1 14 32 is_stmt 0 view .LVU6
+  77 003c DBF87831 		ldr	r3, [fp, #376]	@ float
+  78              		.loc 1 14 30 view .LVU7
+  79 0040 C4F81032 		str	r3, [r4, #528]	@ float
+  15:synth.cpp     **** 
+  16:synth.cpp     ****         //copy synth settings to voice
+  17:synth.cpp     **** 
+  18:synth.cpp     ****         for(int j = 0; j < 3; j++)
+  80              		.loc 1 18 9 is_stmt 1 view .LVU8
+  81              	.LVL2:
+  82              	.LBB4:
+  83              		.loc 1 18 26 view .LVU9
+  19:synth.cpp     ****         {
+  20:synth.cpp     ****             voice[i].osc_waveform[j] = osc_waveform[j];
+  84              		.loc 1 20 38 is_stmt 0 view .LVU10
+  85 0044 1088     		ldrh	r0, [r2]	@ unaligned
+  86 0046 9378     		ldrb	r3, [r2, #2]	@ zero_extendqisi2
+  87 0048 A4F82C02 		strh	r0, [r4, #556]	@ unaligned
+  88 004c 84F82E32 		strb	r3, [r4, #558]
+  21:synth.cpp     ****             voice[i].osc_amp[j]      = osc_amp[j];
+  89              		.loc 1 21 38 view .LVU11
+  90 0050 DAF800C0 		ldr	ip, [r10]	@ unaligned
+  91 0054 DAF80400 		ldr	r0, [r10, #4]	@ unaligned
+  92 0058 DAF80830 		ldr	r3, [r10, #8]	@ unaligned
+ARM GAS  C:\Users\deved\AppData\Local\Temp\ccBD00lM.s 			page 3
+
+
+  93 005c C4F820C2 		str	ip, [r4, #544]	@ unaligned
+  94 0060 C4F82402 		str	r0, [r4, #548]	@ unaligned
+  95 0064 C4F82832 		str	r3, [r4, #552]	@ unaligned
+  22:synth.cpp     ****             voice[i].env_attack[j]   = env_attack[j];
+  96              		.loc 1 22 38 view .LVU12
+  97 0068 D9F800C0 		ldr	ip, [r9]	@ unaligned
+  98 006c D9F80400 		ldr	r0, [r9, #4]	@ unaligned
+  99 0070 D9F80830 		ldr	r3, [r9, #8]	@ unaligned
+ 100 0074 C4F83CC2 		str	ip, [r4, #572]	@ unaligned
+ 101 0078 C4F84002 		str	r0, [r4, #576]	@ unaligned
+ 102 007c C4F84432 		str	r3, [r4, #580]	@ unaligned
+  23:synth.cpp     ****             voice[i].env_decay[j]    = env_decay[j];
+ 103              		.loc 1 23 38 view .LVU13
+ 104 0080 D8F800C0 		ldr	ip, [r8]	@ unaligned
+ 105 0084 D8F80400 		ldr	r0, [r8, #4]	@ unaligned
+ 106 0088 D8F80830 		ldr	r3, [r8, #8]	@ unaligned
+ 107 008c C4F848C2 		str	ip, [r4, #584]	@ unaligned
+ 108 0090 C4F84C02 		str	r0, [r4, #588]	@ unaligned
+ 109 0094 C4F85032 		str	r3, [r4, #592]	@ unaligned
+  24:synth.cpp     ****             voice[i].env_release[j]  = env_release[j];
+ 110              		.loc 1 24 38 view .LVU14
+ 111 0098 D7F800C0 		ldr	ip, [r7]	@ unaligned
+ 112 009c 7868     		ldr	r0, [r7, #4]	@ unaligned
+ 113 009e BB68     		ldr	r3, [r7, #8]	@ unaligned
+ 114 00a0 C4F860C2 		str	ip, [r4, #608]	@ unaligned
+ 115 00a4 C4F86402 		str	r0, [r4, #612]	@ unaligned
+ 116 00a8 C4F86832 		str	r3, [r4, #616]	@ unaligned
+  25:synth.cpp     ****             voice[i].env_sustain[j]  = env_sustain[j];
+ 117              		.loc 1 25 38 view .LVU15
+ 118 00ac 7068     		ldr	r0, [r6, #4]	@ unaligned
+ 119 00ae D6F800C0 		ldr	ip, [r6]	@ unaligned
+ 120 00b2 B368     		ldr	r3, [r6, #8]	@ unaligned
+ 121 00b4 C4F854C2 		str	ip, [r4, #596]	@ unaligned
+ 122 00b8 C4F85C32 		str	r3, [r4, #604]	@ unaligned
+ 123              	.LVL3:
+ 124              		.loc 1 25 38 view .LVU16
+ 125              	.LBE4:
+  26:synth.cpp     ****         }
+  27:synth.cpp     **** 
+  28:synth.cpp     ****         voice[i].flt_res    = flt_res;
+ 126              		.loc 1 28 9 is_stmt 1 view .LVU17
+ 127 00bc 0B46     		mov	r3, r1
+ 128              	.LBB5:
+  25:synth.cpp     ****             voice[i].env_sustain[j]  = env_sustain[j];
+ 129              		.loc 1 25 38 is_stmt 0 view .LVU18
+ 130 00be C4F85802 		str	r0, [r4, #600]	@ unaligned
+ 131              	.LBE5:
+ 132              		.loc 1 28 31 view .LVU19
+ 133 00c2 DBF8D801 		ldr	r0, [fp, #472]	@ float
+ 134              		.loc 1 28 29 view .LVU20
+ 135 00c6 C4F87002 		str	r0, [r4, #624]	@ float
+  29:synth.cpp     ****         voice[i].flt_cutoff = flt_cutoff;
+ 136              		.loc 1 29 9 is_stmt 1 view .LVU21
+ 137              		.loc 1 29 31 is_stmt 0 view .LVU22
+ 138 00ca DBF8D401 		ldr	r0, [fp, #468]	@ float
+ 139              		.loc 1 29 29 view .LVU23
+ 140 00ce C4F86C02 		str	r0, [r4, #620]	@ float
+ARM GAS  C:\Users\deved\AppData\Local\Temp\ccBD00lM.s 			page 4
+
+
+  30:synth.cpp     **** 
+  31:synth.cpp     ****         //copy mod settings to voice
+  32:synth.cpp     **** 
+  33:synth.cpp     ****         for(int j = 0; j < 6; j++)
+ 141              		.loc 1 33 9 is_stmt 1 view .LVU24
+ 142              	.LVL4:
+ 143              	.LBB6:
+ 144              		.loc 1 33 26 view .LVU25
+ 145              	.LBE6:
+  29:synth.cpp     ****         voice[i].flt_cutoff = flt_cutoff;
+ 146              		.loc 1 29 29 is_stmt 0 view .LVU26
+ 147 00d2 2046     		mov	r0, r4
+ 148              	.LVL5:
+ 149              	.L2:
+ 150              	.LBB7:
+  34:synth.cpp     ****         {
+  35:synth.cpp     ****             voice[i].mod[j].src    = mod[j].src;
+ 151              		.loc 1 35 13 is_stmt 1 discriminator 2 view .LVU27
+ 152              		.loc 1 35 45 is_stmt 0 discriminator 2 view .LVU28
+ 153 00d4 93F800C0 		ldrb	ip, [r3]	@ zero_extendqisi2
+  33:synth.cpp     ****         {
+ 154              		.loc 1 33 26 discriminator 2 view .LVU29
+ 155 00d8 0833     		adds	r3, r3, #8
+ 156 00da 0830     		adds	r0, r0, #8
+ 157              		.loc 1 35 36 discriminator 2 view .LVU30
+ 158 00dc 80F8D8C1 		strb	ip, [r0, #472]
+  36:synth.cpp     ****             voice[i].mod[j].target = mod[j].target;
+ 159              		.loc 1 36 13 is_stmt 1 discriminator 2 view .LVU31
+ 160              		.loc 1 36 45 is_stmt 0 discriminator 2 view .LVU32
+ 161 00e0 13F807CC 		ldrb	ip, [r3, #-7]	@ zero_extendqisi2
+ 162              		.loc 1 36 36 discriminator 2 view .LVU33
+ 163 00e4 80F8D9C1 		strb	ip, [r0, #473]
+  37:synth.cpp     ****             voice[i].mod[j].amount = mod[j].amount;
+ 164              		.loc 1 37 13 is_stmt 1 discriminator 2 view .LVU34
+ 165              		.loc 1 37 45 is_stmt 0 discriminator 2 view .LVU35
+ 166 00e8 53F804CC 		ldr	ip, [r3, #-4]	@ float
+  33:synth.cpp     ****         {
+ 167              		.loc 1 33 26 discriminator 2 view .LVU36
+ 168 00ec AB42     		cmp	r3, r5
+ 169              		.loc 1 37 36 discriminator 2 view .LVU37
+ 170 00ee C0F8DCC1 		str	ip, [r0, #476]	@ float
+  33:synth.cpp     ****         {
+ 171              		.loc 1 33 9 is_stmt 1 discriminator 2 view .LVU38
+  33:synth.cpp     ****         {
+ 172              		.loc 1 33 26 discriminator 2 view .LVU39
+ 173 00f2 EFD1     		bne	.L2
+ 174              	.LBE7:
+  38:synth.cpp     ****         }
+  39:synth.cpp     **** 
+  40:synth.cpp     **** 
+  41:synth.cpp     ****         voice[i].Init();
+ 175              		.loc 1 41 22 is_stmt 0 discriminator 2 view .LVU40
+ 176 00f4 2046     		mov	r0, r4
+ 177              	.LBE3:
+  12:synth.cpp     ****     {
+ 178              		.loc 1 12 22 discriminator 2 view .LVU41
+ 179 00f6 04F51E74 		add	r4, r4, #632
+ARM GAS  C:\Users\deved\AppData\Local\Temp\ccBD00lM.s 			page 5
+
+
+ 180 00fa CDE90012 		strd	r1, r2, [sp]
+ 181              	.LBB8:
+ 182              		.loc 1 41 9 is_stmt 1 discriminator 2 view .LVU42
+ 183              		.loc 1 41 22 is_stmt 0 discriminator 2 view .LVU43
+ 184 00fe FFF7FEFF 		bl	_ZN5Voice4InitEv
+ 185              	.LVL6:
+ 186              	.LBE8:
+  12:synth.cpp     ****     {
+ 187              		.loc 1 12 5 is_stmt 1 discriminator 2 view .LVU44
+  12:synth.cpp     ****     {
+ 188              		.loc 1 12 22 discriminator 2 view .LVU45
+ 189 0102 0099     		ldr	r1, [sp]
+ 190 0104 019A     		ldr	r2, [sp, #4]
+ 191 0106 8C42     		cmp	r4, r1
+ 192 0108 98D1     		bne	.L3
+ 193              	.LBE9:
+  42:synth.cpp     ****     }
+  43:synth.cpp     **** }
+ 194              		.loc 1 43 1 is_stmt 0 view .LVU46
+ 195 010a 03B0     		add	sp, sp, #12
+ 196              		.cfi_def_cfa_offset 36
+ 197              		@ sp needed
+ 198 010c BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 199              		.loc 1 43 1 view .LVU47
+ 200              		.cfi_endproc
+ 201              	.LFE4861:
+ 203              		.section	.text._ZN5Synth11SetWaveformEv,"ax",%progbits
+ 204              		.align	1
+ 205              		.p2align 2,,3
+ 206              		.global	_ZN5Synth11SetWaveformEv
+ 207              		.syntax unified
+ 208              		.thumb
+ 209              		.thumb_func
+ 210              		.fpu fpv5-d16
+ 212              	_ZN5Synth11SetWaveformEv:
+ 213              	.LVL7:
+ 214              	.LFB4862:
+  44:synth.cpp     **** 
+  45:synth.cpp     **** void Synth::SetWaveform()
+  46:synth.cpp     **** {
+ 215              		.loc 1 46 1 is_stmt 1 view -0
+ 216              		.cfi_startproc
+ 217              		@ args = 0, pretend = 0, frame = 0
+ 218              		@ frame_needed = 0, uses_anonymous_args = 0
+  47:synth.cpp     ****     for(int i = 0; i < 7; i++)
+ 219              		.loc 1 47 5 view .LVU49
+ 220              	.LBB10:
+ 221              		.loc 1 47 22 view .LVU50
+ 222              	.LBE10:
+  46:synth.cpp     ****     for(int i = 0; i < 7; i++)
+ 223              		.loc 1 46 1 is_stmt 0 view .LVU51
+ 224 0000 38B5     		push	{r3, r4, r5, lr}
+ 225              		.cfi_def_cfa_offset 16
+ 226              		.cfi_offset 3, -16
+ 227              		.cfi_offset 4, -12
+ 228              		.cfi_offset 5, -8
+ 229              		.cfi_offset 14, -4
+ARM GAS  C:\Users\deved\AppData\Local\Temp\ccBD00lM.s 			page 6
+
+
+ 230 0002 41F24815 		movw	r5, #4424
+  46:synth.cpp     ****     for(int i = 0; i < 7; i++)
+ 231              		.loc 1 46 1 view .LVU52
+ 232 0006 0446     		mov	r4, r0
+ 233 0008 0544     		add	r5, r5, r0
+ 234              	.LVL8:
+ 235              	.L9:
+ 236              	.LBB11:
+  48:synth.cpp     ****     {
+  49:synth.cpp     ****         voice[i].SetWaveform();
+ 237              		.loc 1 49 9 is_stmt 1 discriminator 2 view .LVU53
+ 238              		.loc 1 49 29 is_stmt 0 discriminator 2 view .LVU54
+ 239 000a 2046     		mov	r0, r4
+  47:synth.cpp     ****     {
+ 240              		.loc 1 47 22 discriminator 2 view .LVU55
+ 241 000c 04F51E74 		add	r4, r4, #632
+ 242              		.loc 1 49 29 discriminator 2 view .LVU56
+ 243 0010 FFF7FEFF 		bl	_ZN5Voice11SetWaveformEv
+ 244              	.LVL9:
+  47:synth.cpp     ****     {
+ 245              		.loc 1 47 5 is_stmt 1 discriminator 2 view .LVU57
+  47:synth.cpp     ****     {
+ 246              		.loc 1 47 22 discriminator 2 view .LVU58
+ 247 0014 AC42     		cmp	r4, r5
+ 248 0016 F8D1     		bne	.L9
+ 249              	.LBE11:
+  50:synth.cpp     ****     }
+  51:synth.cpp     **** }
+ 250              		.loc 1 51 1 is_stmt 0 view .LVU59
+ 251 0018 38BD     		pop	{r3, r4, r5, pc}
+ 252              		.cfi_endproc
+ 253              	.LFE4862:
+ 255 001a 00BF     		.section	.text._ZN5Synth11SetEnvelopeEv,"ax",%progbits
+ 256              		.align	1
+ 257              		.p2align 2,,3
+ 258              		.global	_ZN5Synth11SetEnvelopeEv
+ 259              		.syntax unified
+ 260              		.thumb
+ 261              		.thumb_func
+ 262              		.fpu fpv5-d16
+ 264              	_ZN5Synth11SetEnvelopeEv:
+ 265              	.LVL10:
+ 266              	.LFB4863:
+  52:synth.cpp     **** 
+  53:synth.cpp     **** void Synth::SetEnvelope()
+  54:synth.cpp     **** {
+ 267              		.loc 1 54 1 is_stmt 1 view -0
+ 268              		.cfi_startproc
+ 269              		@ args = 0, pretend = 0, frame = 0
+ 270              		@ frame_needed = 0, uses_anonymous_args = 0
+  55:synth.cpp     ****     for(int i = 0; i < 7; i++)
+ 271              		.loc 1 55 5 view .LVU61
+ 272              	.LBB12:
+ 273              		.loc 1 55 22 view .LVU62
+ 274              	.LBE12:
+  54:synth.cpp     ****     for(int i = 0; i < 7; i++)
+ 275              		.loc 1 54 1 is_stmt 0 view .LVU63
+ARM GAS  C:\Users\deved\AppData\Local\Temp\ccBD00lM.s 			page 7
+
+
+ 276 0000 38B5     		push	{r3, r4, r5, lr}
+ 277              		.cfi_def_cfa_offset 16
+ 278              		.cfi_offset 3, -16
+ 279              		.cfi_offset 4, -12
+ 280              		.cfi_offset 5, -8
+ 281              		.cfi_offset 14, -4
+ 282 0002 41F24815 		movw	r5, #4424
+  54:synth.cpp     ****     for(int i = 0; i < 7; i++)
+ 283              		.loc 1 54 1 view .LVU64
+ 284 0006 0446     		mov	r4, r0
+ 285 0008 0544     		add	r5, r5, r0
+ 286              	.LVL11:
+ 287              	.L13:
+ 288              	.LBB13:
+  56:synth.cpp     ****     {
+  57:synth.cpp     ****         voice[i].SetEnvelope();
+ 289              		.loc 1 57 9 is_stmt 1 discriminator 2 view .LVU65
+ 290              		.loc 1 57 29 is_stmt 0 discriminator 2 view .LVU66
+ 291 000a 2046     		mov	r0, r4
+  55:synth.cpp     ****     {
+ 292              		.loc 1 55 22 discriminator 2 view .LVU67
+ 293 000c 04F51E74 		add	r4, r4, #632
+ 294              		.loc 1 57 29 discriminator 2 view .LVU68
+ 295 0010 FFF7FEFF 		bl	_ZN5Voice11SetEnvelopeEv
+ 296              	.LVL12:
+  55:synth.cpp     ****     {
+ 297              		.loc 1 55 5 is_stmt 1 discriminator 2 view .LVU69
+  55:synth.cpp     ****     {
+ 298              		.loc 1 55 22 discriminator 2 view .LVU70
+ 299 0014 AC42     		cmp	r4, r5
+ 300 0016 F8D1     		bne	.L13
+ 301              	.LBE13:
+  58:synth.cpp     ****     }
+  59:synth.cpp     **** }
+ 302              		.loc 1 59 1 is_stmt 0 view .LVU71
+ 303 0018 38BD     		pop	{r3, r4, r5, pc}
+ 304              		.cfi_endproc
+ 305              	.LFE4863:
+ 307 001a 00BF     		.section	.text._ZN5Synth9SetFilterEv,"ax",%progbits
+ 308              		.align	1
+ 309              		.p2align 2,,3
+ 310              		.global	_ZN5Synth9SetFilterEv
+ 311              		.syntax unified
+ 312              		.thumb
+ 313              		.thumb_func
+ 314              		.fpu fpv5-d16
+ 316              	_ZN5Synth9SetFilterEv:
+ 317              	.LVL13:
+ 318              	.LFB4864:
+  60:synth.cpp     **** 
+  61:synth.cpp     **** void Synth::SetFilter()
+  62:synth.cpp     **** {
+ 319              		.loc 1 62 1 is_stmt 1 view -0
+ 320              		.cfi_startproc
+ 321              		@ args = 0, pretend = 0, frame = 0
+ 322              		@ frame_needed = 0, uses_anonymous_args = 0
+  63:synth.cpp     ****     for(int i = 0; i < 7; i++)
+ARM GAS  C:\Users\deved\AppData\Local\Temp\ccBD00lM.s 			page 8
+
+
+ 323              		.loc 1 63 5 view .LVU73
+ 324              	.LBB14:
+ 325              		.loc 1 63 22 view .LVU74
+ 326              	.LBE14:
+  62:synth.cpp     ****     for(int i = 0; i < 7; i++)
+ 327              		.loc 1 62 1 is_stmt 0 view .LVU75
+ 328 0000 38B5     		push	{r3, r4, r5, lr}
+ 329              		.cfi_def_cfa_offset 16
+ 330              		.cfi_offset 3, -16
+ 331              		.cfi_offset 4, -12
+ 332              		.cfi_offset 5, -8
+ 333              		.cfi_offset 14, -4
+ 334 0002 41F24815 		movw	r5, #4424
+  62:synth.cpp     ****     for(int i = 0; i < 7; i++)
+ 335              		.loc 1 62 1 view .LVU76
+ 336 0006 0446     		mov	r4, r0
+ 337 0008 0544     		add	r5, r5, r0
+ 338              	.LVL14:
+ 339              	.L17:
+ 340              	.LBB15:
+  64:synth.cpp     ****     {
+  65:synth.cpp     ****         voice[i].SetFilter();
+ 341              		.loc 1 65 9 is_stmt 1 discriminator 2 view .LVU77
+ 342              		.loc 1 65 27 is_stmt 0 discriminator 2 view .LVU78
+ 343 000a 2046     		mov	r0, r4
+  63:synth.cpp     ****     {
+ 344              		.loc 1 63 22 discriminator 2 view .LVU79
+ 345 000c 04F51E74 		add	r4, r4, #632
+ 346              		.loc 1 65 27 discriminator 2 view .LVU80
+ 347 0010 FFF7FEFF 		bl	_ZN5Voice9SetFilterEv
+ 348              	.LVL15:
+  63:synth.cpp     ****     {
+ 349              		.loc 1 63 5 is_stmt 1 discriminator 2 view .LVU81
+  63:synth.cpp     ****     {
+ 350              		.loc 1 63 22 discriminator 2 view .LVU82
+ 351 0014 AC42     		cmp	r4, r5
+ 352 0016 F8D1     		bne	.L17
+ 353              	.LBE15:
+  66:synth.cpp     ****     }
+  67:synth.cpp     **** }
+ 354              		.loc 1 67 1 is_stmt 0 view .LVU83
+ 355 0018 38BD     		pop	{r3, r4, r5, pc}
+ 356              		.cfi_endproc
+ 357              	.LFE4864:
+ 359 001a 00BF     		.section	.text._ZN5Synth6SetLFOEv,"ax",%progbits
+ 360              		.align	1
+ 361              		.p2align 2,,3
+ 362              		.global	_ZN5Synth6SetLFOEv
+ 363              		.syntax unified
+ 364              		.thumb
+ 365              		.thumb_func
+ 366              		.fpu fpv5-d16
+ 368              	_ZN5Synth6SetLFOEv:
+ 369              	.LVL16:
+ 370              	.LFB4865:
+  68:synth.cpp     **** 
+  69:synth.cpp     **** void Synth::SetLFO()
+ARM GAS  C:\Users\deved\AppData\Local\Temp\ccBD00lM.s 			page 9
+
+
+  70:synth.cpp     **** {
+ 371              		.loc 1 70 1 is_stmt 1 view -0
+ 372              		.cfi_startproc
+ 373              		@ args = 0, pretend = 0, frame = 0
+ 374              		@ frame_needed = 0, uses_anonymous_args = 0
+  71:synth.cpp     ****     for(int i = 0; i < 7; i++)
+ 375              		.loc 1 71 5 view .LVU85
+ 376              	.LBB16:
+ 377              		.loc 1 71 22 view .LVU86
+ 378              	.LBE16:
+  70:synth.cpp     ****     for(int i = 0; i < 7; i++)
+ 379              		.loc 1 70 1 is_stmt 0 view .LVU87
+ 380 0000 38B5     		push	{r3, r4, r5, lr}
+ 381              		.cfi_def_cfa_offset 16
+ 382              		.cfi_offset 3, -16
+ 383              		.cfi_offset 4, -12
+ 384              		.cfi_offset 5, -8
+ 385              		.cfi_offset 14, -4
+ 386 0002 41F24815 		movw	r5, #4424
+  70:synth.cpp     ****     for(int i = 0; i < 7; i++)
+ 387              		.loc 1 70 1 view .LVU88
+ 388 0006 0446     		mov	r4, r0
+ 389 0008 0544     		add	r5, r5, r0
+ 390              	.LVL17:
+ 391              	.L21:
+ 392              	.LBB17:
+  72:synth.cpp     ****     {
+  73:synth.cpp     ****         voice[i].SetLFO();
+ 393              		.loc 1 73 9 is_stmt 1 discriminator 2 view .LVU89
+ 394              		.loc 1 73 24 is_stmt 0 discriminator 2 view .LVU90
+ 395 000a 2046     		mov	r0, r4
+  71:synth.cpp     ****     {
+ 396              		.loc 1 71 22 discriminator 2 view .LVU91
+ 397 000c 04F51E74 		add	r4, r4, #632
+ 398              		.loc 1 73 24 discriminator 2 view .LVU92
+ 399 0010 FFF7FEFF 		bl	_ZN5Voice6SetLFOEv
+ 400              	.LVL18:
+  71:synth.cpp     ****     {
+ 401              		.loc 1 71 5 is_stmt 1 discriminator 2 view .LVU93
+  71:synth.cpp     ****     {
+ 402              		.loc 1 71 22 discriminator 2 view .LVU94
+ 403 0014 AC42     		cmp	r4, r5
+ 404 0016 F8D1     		bne	.L21
+ 405              	.LBE17:
+  74:synth.cpp     ****     }
+  75:synth.cpp     **** }
+ 406              		.loc 1 75 1 is_stmt 0 view .LVU95
+ 407 0018 38BD     		pop	{r3, r4, r5, pc}
+ 408              		.cfi_endproc
+ 409              	.LFE4865:
+ 411 001a 00BF     		.section	.text._ZN5Synth6NoteOnEhh,"ax",%progbits
+ 412              		.align	1
+ 413              		.p2align 2,,3
+ 414              		.global	_ZN5Synth6NoteOnEhh
+ 415              		.syntax unified
+ 416              		.thumb
+ 417              		.thumb_func
+ARM GAS  C:\Users\deved\AppData\Local\Temp\ccBD00lM.s 			page 10
+
+
+ 418              		.fpu fpv5-d16
+ 420              	_ZN5Synth6NoteOnEhh:
+ 421              	.LVL19:
+ 422              	.LFB4866:
+  76:synth.cpp     **** 
+  77:synth.cpp     **** void Synth::NoteOn(uint8_t midi_note, uint8_t midi_velocity)
+  78:synth.cpp     **** {
+ 423              		.loc 1 78 1 is_stmt 1 view -0
+ 424              		.cfi_startproc
+ 425              		@ args = 0, pretend = 0, frame = 0
+ 426              		@ frame_needed = 0, uses_anonymous_args = 0
+ 427              		@ link register save eliminated.
+  79:synth.cpp     ****     // Find a free voice
+  80:synth.cpp     **** 
+  81:synth.cpp     ****     for(int i = 0; i < 7; i++)
+ 428              		.loc 1 81 5 view .LVU97
+ 429              	.LBB18:
+ 430              		.loc 1 81 22 view .LVU98
+ 431              		.loc 1 81 13 is_stmt 0 view .LVU99
+ 432 0000 4FF0000C 		mov	ip, #0
+ 433 0004 0346     		mov	r3, r0
+ 434              	.LBE18:
+  78:synth.cpp     ****     // Find a free voice
+ 435              		.loc 1 78 1 view .LVU100
+ 436 0006 10B4     		push	{r4}
+ 437              		.cfi_def_cfa_offset 4
+ 438              		.cfi_offset 4, -4
+ 439              	.LVL20:
+ 440              	.L26:
+ 441              	.LBB19:
+  82:synth.cpp     ****     {
+  83:synth.cpp     ****         if(voice[i].gate == false)
+ 442              		.loc 1 83 9 is_stmt 1 view .LVU101
+  81:synth.cpp     ****     {
+ 443              		.loc 1 81 5 view .LVU102
+ 444              		.loc 1 83 9 is_stmt 0 view .LVU103
+ 445 0008 1C78     		ldrb	r4, [r3]	@ zero_extendqisi2
+  81:synth.cpp     ****     {
+ 446              		.loc 1 81 22 view .LVU104
+ 447 000a 03F51E73 		add	r3, r3, #632
+ 448              		.loc 1 83 9 view .LVU105
+ 449 000e 3CB1     		cbz	r4, .L29
+  81:synth.cpp     ****     {
+ 450              		.loc 1 81 5 discriminator 2 view .LVU106
+ 451 0010 0CF1010C 		add	ip, ip, #1
+ 452              	.LVL21:
+  81:synth.cpp     ****     {
+ 453              		.loc 1 81 22 is_stmt 1 discriminator 2 view .LVU107
+ 454 0014 BCF1070F 		cmp	ip, #7
+ 455 0018 F6D1     		bne	.L26
+ 456              	.LBE19:
+  84:synth.cpp     ****         {
+  85:synth.cpp     ****             voice[i].NoteOn(midi_note, midi_velocity);
+  86:synth.cpp     ****             break;
+  87:synth.cpp     ****         }
+  88:synth.cpp     ****     }
+  89:synth.cpp     **** }
+ARM GAS  C:\Users\deved\AppData\Local\Temp\ccBD00lM.s 			page 11
+
+
+ 457              		.loc 1 89 1 is_stmt 0 view .LVU108
+ 458 001a 5DF8044B 		ldr	r4, [sp], #4
+ 459              		.cfi_remember_state
+ 460              		.cfi_restore 4
+ 461              		.cfi_def_cfa_offset 0
+ 462 001e 7047     		bx	lr
+ 463              	.L29:
+ 464              		.cfi_restore_state
+ 465              	.LBB20:
+  85:synth.cpp     ****             break;
+ 466              		.loc 1 85 13 is_stmt 1 view .LVU109
+  85:synth.cpp     ****             break;
+ 467              		.loc 1 85 28 is_stmt 0 view .LVU110
+ 468 0020 4FF41E73 		mov	r3, #632
+ 469              	.LBE20:
+ 470              		.loc 1 89 1 view .LVU111
+ 471 0024 5DF8044B 		ldr	r4, [sp], #4
+ 472              		.cfi_restore 4
+ 473              		.cfi_def_cfa_offset 0
+ 474              	.LBB21:
+  85:synth.cpp     ****             break;
+ 475              		.loc 1 85 28 view .LVU112
+ 476 0028 03FB0C00 		mla	r0, r3, ip, r0
+ 477              	.LVL22:
+  85:synth.cpp     ****             break;
+ 478              		.loc 1 85 28 view .LVU113
+ 479 002c FFF7FEBF 		b	_ZN5Voice6NoteOnEhh
+ 480              	.LVL23:
+  85:synth.cpp     ****             break;
+ 481              		.loc 1 85 28 view .LVU114
+ 482              	.LBE21:
+ 483              		.cfi_endproc
+ 484              	.LFE4866:
+ 486              		.section	.text._ZN5Synth7NoteOffEh,"ax",%progbits
+ 487              		.align	1
+ 488              		.p2align 2,,3
+ 489              		.global	_ZN5Synth7NoteOffEh
+ 490              		.syntax unified
+ 491              		.thumb
+ 492              		.thumb_func
+ 493              		.fpu fpv5-d16
+ 495              	_ZN5Synth7NoteOffEh:
+ 496              	.LVL24:
+ 497              	.LFB4867:
+  90:synth.cpp     **** 
+  91:synth.cpp     **** void Synth::NoteOff(uint8_t midi_note)
+  92:synth.cpp     **** {
+ 498              		.loc 1 92 1 is_stmt 1 view -0
+ 499              		.cfi_startproc
+ 500              		@ args = 0, pretend = 0, frame = 0
+ 501              		@ frame_needed = 0, uses_anonymous_args = 0
+ 502              		@ link register save eliminated.
+  93:synth.cpp     ****     for(int i = 0; i < 7; i++)
+ 503              		.loc 1 93 5 view .LVU116
+ 504              	.LBB22:
+ 505              		.loc 1 93 22 view .LVU117
+ 506              		.loc 1 93 13 is_stmt 0 view .LVU118
+ARM GAS  C:\Users\deved\AppData\Local\Temp\ccBD00lM.s 			page 12
+
+
+ 507 0000 0022     		movs	r2, #0
+ 508 0002 0346     		mov	r3, r0
+ 509              	.LBE22:
+  92:synth.cpp     ****     for(int i = 0; i < 7; i++)
+ 510              		.loc 1 92 1 view .LVU119
+ 511 0004 10B4     		push	{r4}
+ 512              		.cfi_def_cfa_offset 4
+ 513              		.cfi_offset 4, -4
+ 514              	.LVL25:
+ 515              	.L32:
+ 516              	.LBB23:
+  94:synth.cpp     ****     {
+  95:synth.cpp     ****         if(voice[i].gate == true && voice[i].midi_note == midi_note)
+ 517              		.loc 1 95 9 is_stmt 1 view .LVU120
+  93:synth.cpp     ****     {
+ 518              		.loc 1 93 5 view .LVU121
+ 519              		.loc 1 95 9 is_stmt 0 view .LVU122
+ 520 0006 1C78     		ldrb	r4, [r3]	@ zero_extendqisi2
+ 521 0008 14B1     		cbz	r4, .L31
+ 522              		.loc 1 95 34 discriminator 1 view .LVU123
+ 523 000a 5C78     		ldrb	r4, [r3, #1]	@ zero_extendqisi2
+ 524 000c 8C42     		cmp	r4, r1
+ 525 000e 07D0     		beq	.L38
+ 526              	.L31:
+  93:synth.cpp     ****     {
+ 527              		.loc 1 93 5 discriminator 2 view .LVU124
+ 528 0010 0132     		adds	r2, r2, #1
+ 529              	.LVL26:
+  93:synth.cpp     ****     {
+ 530              		.loc 1 93 22 is_stmt 1 discriminator 2 view .LVU125
+ 531 0012 03F51E73 		add	r3, r3, #632
+ 532 0016 072A     		cmp	r2, #7
+ 533 0018 F5D1     		bne	.L32
+ 534              	.LBE23:
+  96:synth.cpp     ****         {
+  97:synth.cpp     ****             voice[i].NoteOff(midi_note);
+  98:synth.cpp     ****             break;
+  99:synth.cpp     ****         }
+ 100:synth.cpp     ****     }
+ 101:synth.cpp     **** }
+ 535              		.loc 1 101 1 is_stmt 0 view .LVU126
+ 536 001a 5DF8044B 		ldr	r4, [sp], #4
+ 537              		.cfi_remember_state
+ 538              		.cfi_restore 4
+ 539              		.cfi_def_cfa_offset 0
+ 540 001e 7047     		bx	lr
+ 541              	.L38:
+ 542              		.cfi_restore_state
+ 543              	.LBB24:
+  97:synth.cpp     ****             break;
+ 544              		.loc 1 97 13 is_stmt 1 view .LVU127
+  97:synth.cpp     ****             break;
+ 545              		.loc 1 97 29 is_stmt 0 view .LVU128
+ 546 0020 4FF41E73 		mov	r3, #632
+ 547              	.LBE24:
+ 548              		.loc 1 101 1 view .LVU129
+ 549 0024 5DF8044B 		ldr	r4, [sp], #4
+ARM GAS  C:\Users\deved\AppData\Local\Temp\ccBD00lM.s 			page 13
+
+
+ 550              		.cfi_restore 4
+ 551              		.cfi_def_cfa_offset 0
+ 552              	.LBB25:
+  97:synth.cpp     ****             break;
+ 553              		.loc 1 97 29 view .LVU130
+ 554 0028 03FB0200 		mla	r0, r3, r2, r0
+ 555              	.LVL27:
+  97:synth.cpp     ****             break;
+ 556              		.loc 1 97 29 view .LVU131
+ 557 002c FFF7FEBF 		b	_ZN5Voice7NoteOffEh
+ 558              	.LVL28:
+  97:synth.cpp     ****             break;
+ 559              		.loc 1 97 29 view .LVU132
+ 560              	.LBE25:
+ 561              		.cfi_endproc
+ 562              	.LFE4867:
+ 564              		.section	.text._ZN5Synth7ProcessEPfS0_,"ax",%progbits
+ 565              		.align	1
+ 566              		.p2align 2,,3
+ 567              		.global	_ZN5Synth7ProcessEPfS0_
+ 568              		.syntax unified
+ 569              		.thumb
+ 570              		.thumb_func
+ 571              		.fpu fpv5-d16
+ 573              	_ZN5Synth7ProcessEPfS0_:
+ 574              	.LVL29:
+ 575              	.LFB4868:
+ 102:synth.cpp     **** 
+ 103:synth.cpp     **** void Synth::Process(float *out_l, float *out_r)
+ 104:synth.cpp     **** {
+ 576              		.loc 1 104 1 is_stmt 1 view -0
+ 577              		.cfi_startproc
+ 578              		@ args = 0, pretend = 0, frame = 8
+ 579              		@ frame_needed = 0, uses_anonymous_args = 0
+ 105:synth.cpp     ****     float _l = 0, _r = 0;
+ 580              		.loc 1 105 5 view .LVU134
+ 106:synth.cpp     ****     for(int i = 0; i < 7; i++)
+ 581              		.loc 1 106 5 view .LVU135
+ 582              	.LBB26:
+ 583              		.loc 1 106 22 view .LVU136
+ 584              	.LBE26:
+ 104:synth.cpp     ****     float _l = 0, _r = 0;
+ 585              		.loc 1 104 1 is_stmt 0 view .LVU137
+ 586 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 587              		.cfi_def_cfa_offset 20
+ 588              		.cfi_offset 4, -20
+ 589              		.cfi_offset 5, -16
+ 590              		.cfi_offset 6, -12
+ 591              		.cfi_offset 7, -8
+ 592              		.cfi_offset 14, -4
+ 593 0002 2DED028B 		vpush.64	{d8}
+ 594              		.cfi_def_cfa_offset 28
+ 595              		.cfi_offset 80, -28
+ 596              		.cfi_offset 81, -24
+ 105:synth.cpp     ****     float _l = 0, _r = 0;
+ 597              		.loc 1 105 19 view .LVU138
+ 598 0006 9FED138A 		vldr.32	s16, .L43
+ARM GAS  C:\Users\deved\AppData\Local\Temp\ccBD00lM.s 			page 14
+
+
+ 599 000a 41F24815 		movw	r5, #4424
+ 104:synth.cpp     ****     float _l = 0, _r = 0;
+ 600              		.loc 1 104 1 view .LVU139
+ 601 000e 83B0     		sub	sp, sp, #12
+ 602              		.cfi_def_cfa_offset 40
+ 603 0010 0446     		mov	r4, r0
+ 105:synth.cpp     ****     float _l = 0, _r = 0;
+ 604              		.loc 1 105 11 view .LVU140
+ 605 0012 F0EE488A 		vmov.f32	s17, s16
+ 104:synth.cpp     ****     float _l = 0, _r = 0;
+ 606              		.loc 1 104 1 view .LVU141
+ 607 0016 0F46     		mov	r7, r1
+ 608 0018 1646     		mov	r6, r2
+ 609 001a 0544     		add	r5, r5, r0
+ 610              	.LVL30:
+ 611              	.L40:
+ 612              	.LBB30:
+ 613              	.LBB27:
+ 107:synth.cpp     ****     {
+ 108:synth.cpp     ****         float l = 0, r = 0;
+ 614              		.loc 1 108 9 is_stmt 1 discriminator 2 view .LVU142
+ 615              		.loc 1 108 15 is_stmt 0 discriminator 2 view .LVU143
+ 616 001c 0023     		movs	r3, #0
+ 109:synth.cpp     ****         voice[i].Process(&l, &r);
+ 617              		.loc 1 109 25 discriminator 2 view .LVU144
+ 618 001e 2046     		mov	r0, r4
+ 619              	.LBE27:
+ 106:synth.cpp     ****     {
+ 620              		.loc 1 106 22 discriminator 2 view .LVU145
+ 621 0020 04F51E74 		add	r4, r4, #632
+ 622              	.LBB28:
+ 623              		.loc 1 109 25 discriminator 2 view .LVU146
+ 624 0024 01AA     		add	r2, sp, #4
+ 625 0026 6946     		mov	r1, sp
+ 108:synth.cpp     ****         voice[i].Process(&l, &r);
+ 626              		.loc 1 108 15 discriminator 2 view .LVU147
+ 627 0028 0093     		str	r3, [sp]	@ float
+ 108:synth.cpp     ****         voice[i].Process(&l, &r);
+ 628              		.loc 1 108 22 discriminator 2 view .LVU148
+ 629 002a 0193     		str	r3, [sp, #4]	@ float
+ 630              		.loc 1 109 9 is_stmt 1 discriminator 2 view .LVU149
+ 631              		.loc 1 109 25 is_stmt 0 discriminator 2 view .LVU150
+ 632 002c FFF7FEFF 		bl	_ZN5Voice7ProcessEPfS0_
+ 633              	.LVL31:
+ 110:synth.cpp     ****         _l += l;
+ 634              		.loc 1 110 9 is_stmt 1 discriminator 2 view .LVU151
+ 635              		.loc 1 110 12 is_stmt 0 discriminator 2 view .LVU152
+ 636 0030 9DED007A 		vldr.32	s14, [sp]
+ 637              	.LBE28:
+ 106:synth.cpp     ****     {
+ 638              		.loc 1 106 22 discriminator 2 view .LVU153
+ 639 0034 A542     		cmp	r5, r4
+ 640              	.LBB29:
+ 111:synth.cpp     ****         _r += r;
+ 641              		.loc 1 111 12 discriminator 2 view .LVU154
+ 642 0036 DDED017A 		vldr.32	s15, [sp, #4]
+ 110:synth.cpp     ****         _l += l;
+ARM GAS  C:\Users\deved\AppData\Local\Temp\ccBD00lM.s 			page 15
+
+
+ 643              		.loc 1 110 12 discriminator 2 view .LVU155
+ 644 003a 78EE878A 		vadd.f32	s17, s17, s14
+ 645              	.LVL32:
+ 646              		.loc 1 111 9 is_stmt 1 discriminator 2 view .LVU156
+ 647              		.loc 1 111 12 is_stmt 0 discriminator 2 view .LVU157
+ 648 003e 38EE278A 		vadd.f32	s16, s16, s15
+ 649              	.LVL33:
+ 650              		.loc 1 111 12 discriminator 2 view .LVU158
+ 651              	.LBE29:
+ 106:synth.cpp     ****     {
+ 652              		.loc 1 106 5 is_stmt 1 discriminator 2 view .LVU159
+ 106:synth.cpp     ****     {
+ 653              		.loc 1 106 22 discriminator 2 view .LVU160
+ 654 0042 EBD1     		bne	.L40
+ 655              	.LBE30:
+ 112:synth.cpp     ****     }
+ 113:synth.cpp     ****     *out_l = _l;
+ 656              		.loc 1 113 5 view .LVU161
+ 657              		.loc 1 113 12 is_stmt 0 view .LVU162
+ 658 0044 C7ED008A 		vstr.32	s17, [r7]
+ 114:synth.cpp     ****     *out_r = _r;
+ 659              		.loc 1 114 5 is_stmt 1 view .LVU163
+ 660              		.loc 1 114 12 is_stmt 0 view .LVU164
+ 661 0048 86ED008A 		vstr.32	s16, [r6]
+ 115:synth.cpp     **** }...
+ 662              		.loc 1 115 1 view .LVU165
+ 663 004c 03B0     		add	sp, sp, #12
+ 664              		.cfi_def_cfa_offset 28
+ 665              		@ sp needed
+ 666 004e BDEC028B 		vldm	sp!, {d8}
+ 667              		.cfi_restore 80
+ 668              		.cfi_restore 81
+ 669              		.cfi_def_cfa_offset 20
+ 670              	.LVL34:
+ 671              		.loc 1 115 1 view .LVU166
+ 672 0052 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 673              	.LVL35:
+ 674              	.L44:
+ 675              		.loc 1 115 1 view .LVU167
+ 676              		.align	2
+ 677              	.L43:
+ 678 0054 00000000 		.word	0
+ 679              		.cfi_endproc
+ 680              	.LFE4868:
+ 682              		.text
+ 683              	.Letext0:
+ 684              		.file 2 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 685              		.file 3 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 686              		.file 4 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdint.h"
+ 687              		.file 5 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stddef.h"
+ 688              		.file 6 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cmath"
+ 689              		.file 7 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\std_abs.h"
+ 690              		.file 8 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdlib"
+ 691              		.file 9 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdint"
+ 692              		.file 10 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\type_traits"
+ 693              		.file 11 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\debug\\debug.h"
+ 694              		.file 12 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\arm-none-eabi\\t
+ARM GAS  C:\Users\deved\AppData\Local\Temp\ccBD00lM.s 			page 16
+
+
+ 695              		.file 13 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\algorithmf
+ 696              		.file 14 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\stl_pair.h
+ 697              		.file 15 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\exception_
+ 698              		.file 16 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdarg"
+ 699              		.file 17 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdio"
+ 700              		.file 18 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstring"
+ 701              		.file 19 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cwchar"
+ 702              		.file 20 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\clocale"
+ 703              		.file 21 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\basic_stri
+ 704              		.file 22 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\stl_tempbu
+ 705              		.file 23 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\predefined
+ 706              		.file 24 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_types.h"
+ 707              		.file 25 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\reent.h"
+ 708              		.file 26 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\lock.h"
+ 709              		.file 27 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\math.h"
+ 710              		.file 28 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdlib.h"
+ 711              		.file 29 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\math.h"
+ 712              		.file 30 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\stdlib.h"
+ 713              		.file 31 "../../libDaisy//src/daisy_core.h"
+ 714              		.file 32 "../../libDaisy//src/util/wav_format.h"
+ 715              		.file 33 "../../libDaisy//src/dev/max11300.h"
+ 716              		.file 34 "../../libDaisy//src/daisy_seed.h"
+ 717              		.file 35 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stdarg.h"
+ 718              		.file 36 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdio.h"
+ 719              		.file 37 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\string.h"
+ 720              		.file 38 "../../DaisySP//Source/Control/adenv.h"
+ 721              		.file 39 "../../DaisySP//Source/Control/adsr.h"
+ 722              		.file 40 "../../DaisySP//Source/Utility/dsp.h"
+ 723              		.file 41 "../../DaisySP//Source/Synthesis/oscillator.h"
+ 724              		.file 42 "../../DaisySP//DaisySP-LGPL/Source/Filters/moogladder.h"
+ 725              		.file 43 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\wchar.h"
+ 726              		.file 44 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\locale.h"
+ 727              		.file 45 "voice.h"
+ 728              		.file 46 "synth.h"
+ 729              		.file 47 "<built-in>"
+ 730              		.file 48 "../../libDaisy//src/dev/sr_595.h"
+ARM GAS  C:\Users\deved\AppData\Local\Temp\ccBD00lM.s 			page 17
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 synth.cpp
+C:\Users\deved\AppData\Local\Temp\ccBD00lM.s:17     .text._ZN5Synth4InitEv:00000000 $t
+C:\Users\deved\AppData\Local\Temp\ccBD00lM.s:26     .text._ZN5Synth4InitEv:00000000 _ZN5Synth4InitEv
+C:\Users\deved\AppData\Local\Temp\ccBD00lM.s:204    .text._ZN5Synth11SetWaveformEv:00000000 $t
+C:\Users\deved\AppData\Local\Temp\ccBD00lM.s:212    .text._ZN5Synth11SetWaveformEv:00000000 _ZN5Synth11SetWaveformEv
+C:\Users\deved\AppData\Local\Temp\ccBD00lM.s:256    .text._ZN5Synth11SetEnvelopeEv:00000000 $t
+C:\Users\deved\AppData\Local\Temp\ccBD00lM.s:264    .text._ZN5Synth11SetEnvelopeEv:00000000 _ZN5Synth11SetEnvelopeEv
+C:\Users\deved\AppData\Local\Temp\ccBD00lM.s:308    .text._ZN5Synth9SetFilterEv:00000000 $t
+C:\Users\deved\AppData\Local\Temp\ccBD00lM.s:316    .text._ZN5Synth9SetFilterEv:00000000 _ZN5Synth9SetFilterEv
+C:\Users\deved\AppData\Local\Temp\ccBD00lM.s:360    .text._ZN5Synth6SetLFOEv:00000000 $t
+C:\Users\deved\AppData\Local\Temp\ccBD00lM.s:368    .text._ZN5Synth6SetLFOEv:00000000 _ZN5Synth6SetLFOEv
+C:\Users\deved\AppData\Local\Temp\ccBD00lM.s:412    .text._ZN5Synth6NoteOnEhh:00000000 $t
+C:\Users\deved\AppData\Local\Temp\ccBD00lM.s:420    .text._ZN5Synth6NoteOnEhh:00000000 _ZN5Synth6NoteOnEhh
+C:\Users\deved\AppData\Local\Temp\ccBD00lM.s:487    .text._ZN5Synth7NoteOffEh:00000000 $t
+C:\Users\deved\AppData\Local\Temp\ccBD00lM.s:495    .text._ZN5Synth7NoteOffEh:00000000 _ZN5Synth7NoteOffEh
+C:\Users\deved\AppData\Local\Temp\ccBD00lM.s:565    .text._ZN5Synth7ProcessEPfS0_:00000000 $t
+C:\Users\deved\AppData\Local\Temp\ccBD00lM.s:573    .text._ZN5Synth7ProcessEPfS0_:00000000 _ZN5Synth7ProcessEPfS0_
+C:\Users\deved\AppData\Local\Temp\ccBD00lM.s:678    .text._ZN5Synth7ProcessEPfS0_:00000054 $d
+
+UNDEFINED SYMBOLS
+_ZN5Voice4InitEv
+_ZN5Voice11SetWaveformEv
+_ZN5Voice11SetEnvelopeEv
+_ZN5Voice9SetFilterEv
+_ZN5Voice6SetLFOEv
+_ZN5Voice6NoteOnEhh
+_ZN5Voice7NoteOffEh
+_ZN5Voice7ProcessEPfS0_
